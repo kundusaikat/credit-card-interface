@@ -37,7 +37,7 @@ const PaymentCard = () => {
   
      
       if (!/^[a-zA-Z .]+$/.test(value)) {
-        popupWarning("Card Holder Name can only contain letters, spaces, and periods.");
+        popupWarning("Card Holder Name can only contain letters, spaces, and .");
         return;
       }
     }
