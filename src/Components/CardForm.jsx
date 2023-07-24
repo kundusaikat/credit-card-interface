@@ -2,7 +2,8 @@ import React from "react";
 import { BsFillPersonLinesFill } from "react-icons/bs";
 import { AiFillCreditCard } from "react-icons/ai";
 
-const CardForm = ({ formData, handleChange }) => {
+const CardForm = ({ formData, handleChange,handleSubmit }) => {
+  
   return (
     <div className=" flex flex-col text-sm flex-[2] gap-3 p-5">
       <p>Payment Details</p>
@@ -28,11 +29,10 @@ const CardForm = ({ formData, handleChange }) => {
       <div className="flex border-0 border-b border-red-600 items-center gap-2">
         <AiFillCreditCard color="red" />
         <input
-          type="number"
+          type="text"
           value={formData.cardNumber}
           name="cardNumber"
           onChange={handleChange}
-          maxLength={"16"}
           className=""
         />
       </div>
@@ -47,8 +47,6 @@ const CardForm = ({ formData, handleChange }) => {
             className="border-0 border-b border-red-600 items-center gap-2 text-[10px] font-bold"
             value={formData.expiryMonth}
             name="expiryMonth"
-            maxLength={"2"}
-        
             onChange={handleChange}
           />
         </div>
@@ -61,7 +59,6 @@ const CardForm = ({ formData, handleChange }) => {
             className="border-0 border-b border-red-600 items-center gap-2 text-[10px] font-bold"
             value={formData.expiryYear}
             name="expiryYear"
-            maxLength={"4"}
             onChange={handleChange}
           />
         </div>
@@ -85,7 +82,10 @@ const CardForm = ({ formData, handleChange }) => {
           Payment Amount: <span className="text-red-600"> 12 300 &#8377; </span>
         </p>
       </div>
-      <button className="text-white bg-red-600 w-[40%] py-2 px-10 rounded-lg m-auto">
+      <button
+        className="text-white bg-red-600 w-[40%] py-2 px-10 rounded-lg m-auto"
+        onClick={handleSubmit}
+      >
         PAY
       </button>
     </div>

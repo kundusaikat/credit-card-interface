@@ -14,7 +14,7 @@ const CardDetails = ({ formData }) => {
           </div>
           <div className="flex flex-col">
             <p>EXPIRY</p>
-            <p>
+            <div>
               {formData.expiryMonth && formData.expiryYear && (
                 <p>
                   {formData.expiryMonth} / {formData.expiryYear}
@@ -26,7 +26,7 @@ const CardDetails = ({ formData }) => {
               {!formData.expiryMonth && formData.expiryYear && (
                 <p>/ {formData.expiryYear} </p>
               )}
-            </p>
+            </div>
           </div>
           <div className="flex flex-col">
             <p>CVV</p>
