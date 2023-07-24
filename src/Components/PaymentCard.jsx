@@ -35,6 +35,10 @@ const PaymentCard = () => {
         return;
       }
   
+      if (value.length > 32) {
+        popupWarning("Maximum 32 digits");
+        return;
+      }
      
       if (!/^[a-zA-Z .]+$/.test(value)) {
         popupWarning("Card Holder Name can only contain letters, spaces, and .");
